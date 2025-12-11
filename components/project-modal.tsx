@@ -91,7 +91,7 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ type: "spring", duration: 0.5 }}
-            className="relative w-full max-w-6xl max-h-[90vh] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden"
+            className="relative w-full max-w-6xl max-h-[90vh] bg-white rounded-2xl shadow-2xl overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
@@ -102,8 +102,8 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
               <X className="h-5 w-5 text-gray-600" />
             </button>
 
-	            {/* Tabs Header */}
-	            <div className="sticky top-0 z-10 border-b border-gray-200 bg-gray-50">
+            {/* Tabs Header */}
+            <div className="border-b border-gray-200 bg-gray-50">
               <div className="flex">
                 <button
                   onClick={() => setActiveTab("details")}
@@ -132,8 +132,8 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
               </div>
             </div>
 
-	            {/* Tab Content */}
-	            <div className="flex-1 overflow-y-auto">
+            {/* Tab Content */}
+            <div className="overflow-y-auto max-h-[calc(90vh-60px)]">
               {activeTab === "details" && (
                 <div>
                   {/* Header */}
