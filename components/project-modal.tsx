@@ -97,13 +97,13 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
             {/* Close Button */}
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 z-10 p-2 bg-white/90 hover:bg-white rounded-full shadow-lg transition-all duration-200 hover:scale-110"
+              className="absolute top-4 right-4 z-50 p-2 bg-white/90 hover:bg-white rounded-full shadow-2xl transition-all duration-200 hover:scale-110"
             >
               <X className="h-5 w-5 text-gray-600" />
             </button>
 
             {/* Tabs Header */}
-            <div className="border-b border-gray-200 bg-gray-50">
+	            <div className="sticky top-0 z-40 border-b border-gray-200 bg-gray-50">
               <div className="flex">
                 <button
                   onClick={() => setActiveTab("details")}
@@ -133,7 +133,7 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
             </div>
 
             {/* Tab Content */}
-            <div className="overflow-y-auto max-h-[calc(90vh-60px)]">
+	            <div className="overflow-y-auto max-h-[calc(90vh-60px)]">
               {activeTab === "details" && (
                 <div>
                   {/* Header */}
