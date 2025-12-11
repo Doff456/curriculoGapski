@@ -818,7 +818,7 @@ Adaptar IA para estética exige compreender um mercado muito específico e sofis
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div {...fadeInUp}>
               <motion.p
-                className="text-sm font-light tracking-widest uppercase text-gray-500 mb-6"
+                className="text-xs sm:text-sm font-light tracking-wider sm:tracking-widest uppercase text-gray-500 mb-6 break-words"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: shouldReduceMotion ? 0 : 0.2, duration: 0.4 }}
