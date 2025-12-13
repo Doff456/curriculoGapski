@@ -928,7 +928,7 @@ Adaptar IA para estética exige compreender um mercado muito específico e sofis
               viewport={{ once: true, margin: "-100px" }}
             >
               <p className="text-lg font-light text-gray-600 leading-relaxed mb-8">
-                Formado em Técnico em Programação de Jogos Digitais pelo IFPR (2022-2025), sou especializado em criar
+                Formado em Técnico em Programação de Jogos Digitais pelo Instituto Federal do Paraná (2022-2025), sou especializado em criar
                 sistemas web robustos, automações inteligentes e agentes avançados que resolvem problemas reais de ponta
                 a ponta. Trabalho principalmente com Next.js, React, Node.js, Python e N8N — tecnologias que uso para
                 construir desde aplicações completas até fluxos autônomos capazes de operar em produção 24/7.
