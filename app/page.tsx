@@ -1036,7 +1036,7 @@ Adaptar IA para estética exige compreender um mercado muito específico e sofis
                   <div className="space-y-4">
                     <div className="border-l-2 border-gray-200 pl-6">
                       <h5 className="font-medium text-sm">Desenvolvedor Web Full-Stack</h5>
-                      <p className="text-gray-600 text-sm">Black-Academy</p>
+                      <p className="text-gray-600 text-sm">Oryon TI</p>
                       <p className="text-gray-500 text-xs">Sites responsivos, landing pages e marketing digital</p>
                     </div>
                     <div className="border-l-2 border-gray-200 pl-6">
