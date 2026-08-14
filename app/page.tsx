@@ -331,105 +331,82 @@ Com essa arquitetura integrada — Redis para estado rápido, PostgreSQL para pe
         ],
       },
       {
-        title: "Solax - Landing Page para Energia Solar",
+        title: "Ecommerce TropDan Backend",
         shortDescription:
-          "Landing page moderna e responsiva desenvolvida para empresa de painéis solares, focada em conversão e experiência do usuário. Design profissional com gradientes, animações e seções otimizadas para geração de leads.",
+          "Backend Django para uma operação real de ecommerce, reunindo catálogo, checkout, pagamentos, frete, NF-e e automações em uma API REST segura e escalável.",
         description:
-          "Landing page completa desenvolvida para a Solax, empresa especializada em energia solar. O projeto combina design moderno com funcionalidades avançadas de conversão, apresentando os serviços da empresa de forma clara e atrativa.",
+          "Plataforma backend desenvolvida para a TropDan, indústria alimentícia especializada em doces e produtos derivados de banana. A solução centraliza as regras de negócio da loja virtual e suas integrações operacionais.",
         detailedDescription: `## O que este projeto faz?
 
-Esta landing page profissional foi desenvolvida para a empresa Solax, com foco total em conversão de visitantes em leads qualificados. O site apresenta os benefícios da energia solar de forma clara, visual e persuasiva, guiando o usuário desde o primeiro contato até o envio de formulário para orçamento. Todo o design foi pensado para transmitir confiança, credibilidade e profissionalismo, fatores essenciais no mercado de energia solar, onde o ticket médio é alto e decisões exigem segurança.
+O Ecommerce TropDan é o backend de uma loja virtual da indústria alimentícia, criado para sustentar toda a jornada de compra: cadastro de clientes, catálogo, carrinho, cupons, checkout, pedidos e acompanhamento de status. A API atende tanto usuários autenticados quanto carrinhos anônimos e oferece endpoints administrativos para produtos, pedidos, usuários, integrações e métricas.
 
-A interface foi construída com HTML5, CSS3 e JavaScript, utilizando princípios modernos de UI/UX para criar uma experiência fluida e atrativa. O design responsivo garante adaptação perfeita entre desktop e mobile, com imagens otimizadas, layouts flexíveis e navegação intuitiva em qualquer tamanho de tela. Animações suaves e gradientes dão ao site uma identidade visual moderna, reforçando a percepção de tecnologia e sustentabilidade.
+O checkout é integrado ao Mercado Pago Checkout Pro, com suporte a Pix, cartão e boleto. Webhooks assinados atualizam os pagamentos automaticamente, registram os dados da transação, controlam a expiração de pedidos pendentes e disparam a baixa de estoque. Para a logística, o sistema consulta fretes e gera etiquetas pelo Melhor Envio, além de contemplar frete grátis por região e retirada na loja.
 
-O site possui seções estratégicas: uma hero section otimizada para captura de leads, cards de benefícios interativos, explicação visual do processo em três etapas, portfólio real de projetos instalados, catálogo de serviços e múltiplos pontos de conversão. Cada elemento foi pensado para reduzir objeções e aumentar a confiança do usuário. Para melhorar ainda mais o desempenho, foram aplicadas técnicas de performance como minificação, lazy loading e boas práticas de estrutura semântica.
+O módulo fiscal reúne configuração empresarial, certificado digital, pré-visualização e emissão de NF-e, download de XML e DANFE e baixa em lote por período. Serviços de email cuidam da recuperação de senha, confirmação de pedido, aprovação de pagamento, retirada, entrega e campanhas de newsletter.
 
-A landing page também integra ferramentas de marketing e análise, permitindo acompanhar conversões e mapear o comportamento do usuário. Formulários são conectados com automações externas, e todo o conteúdo foi estruturado com foco em SEO, incluindo boas práticas de escrita, meta tags otimizadas e hierarquia adequada para melhor ranqueamento em buscas sobre energia solar.`,
-        image: "/images/solax-cover.png",
-        gallery: [
-          {
-            type: "desktop",
-            images: [
-              "/images/solax-energy.png",
-              "/images/solax-projects.png",
-              "/images/solax-process.png",
-              "/images/solax-benefits.png",
-              "/images/solax-services.png",
-              "/images/solax-hero.png",
-            ],
-          },
-          {
-            type: "mobile",
-            images: [
-              "/images/img-3930.jpeg",
-              "/images/img-3931.jpeg",
-              "/images/img-3932.jpeg",
-              "/images/img-3934.jpeg",
-              "/images/img-3935.jpeg",
-            ],
-          },
-        ],
-        tech: ["HTML5", "CSS3", "JavaScript", "Responsive Design", "UI/UX Design"],
-        category: "Desenvolvimento Web",
+Além da API consumida pela vitrine e pelo painel administrativo, o projeto disponibiliza endpoints protegidos para agentes de IA consultarem produtos, categorias, frete, retirada e pedidos, além de iniciarem checkouts. A arquitetura utiliza JWT, throttling em rotas sensíveis, validação de webhooks, armazenamento seguro de tokens e configurações de CORS, CSRF e HTTPS por ambiente.`,
+        image: "/images/tropdan-ecommerce-cover.png",
+        tech: ["Python 3.13", "Django 5.2", "Django REST Framework", "PostgreSQL", "JWT", "Mercado Pago", "Melhor Envio", "Cloudflare R2", "Docker"],
+        category: "Backend & Ecommerce",
         year: "2025",
-        duration: "1 mês",
+        duration: "Projeto completo",
         team: "Individual",
         features: [
-          "Design responsivo com foco em conversão",
-          "Hero section com captura de leads otimizada",
-          "Seção de benefícios com cards interativos",
-          "Processo simplificado em 3 etapas visuais",
-          "Portfólio de projetos com casos reais",
-          "Seção de serviços com descrições detalhadas",
-          "Gradientes e animações suaves",
-          "Otimização para SEO e performance",
-          "Integração com ferramentas de marketing",
-          "Formulários de contato estratégicos",
-          "Design que transmite confiança e profissionalismo",
-          "Adaptação perfeita para mobile e desktop",
+          "Autenticação JWT, recuperação de senha e gestão de endereços",
+          "Catálogo com produtos, categorias, banners, estoque e avaliações",
+          "Carrinho anônimo e autenticado com cupons de desconto",
+          "Checkout Pro integrado ao Mercado Pago",
+          "Cotação de frete e geração de etiquetas pelo Melhor Envio",
+          "Frete grátis regional e opção de retirada na loja",
+          "Emissão de NF-e e download de XML e DANFE",
+          "Webhooks para pagamentos e rastreamento de entregas",
+          "Emails transacionais e campanhas de newsletter",
+          "Endpoints protegidos para integração com agentes de IA",
+          "Armazenamento de imagens em Cloudinary ou Cloudflare R2",
+          "Rotinas automáticas para estoque, pedidos e notas fiscais",
         ],
         challenges: [
           {
-            problem: "Educar sobre energia solar de forma simples e convincente",
+            problem: "Orquestrar pagamentos e pedidos com consistência",
             solution:
-              "Criação de seções progressivas que explicam benefícios, processo e resultados usando linguagem acessível e elementos visuais claros",
+              "Webhooks validados atualizam o pedido, registram metadados, controlam expirações e executam a baixa de estoque somente após a confirmação do pagamento",
           },
           {
-            problem: "Transmitir confiança para investimento de alto valor",
+            problem: "Unificar diferentes modalidades de entrega",
             solution:
-              "Design profissional com casos reais, garantias claras, processo transparente e elementos visuais que remetem à qualidade e sustentabilidade",
+              "Uma camada logística combina Melhor Envio, regras regionais de frete grátis e retirada na loja, preservando um fluxo único de checkout",
           },
           {
-            problem: "Otimizar conversão sem comprometer a experiência",
+            problem: "Automatizar uma operação fiscal complexa",
             solution:
-              "Posicionamento estratégico de CTAs, formulários não-intrusivos e múltiplos pontos de conversão adaptados ao comportamento do usuário",
+              "O módulo fiscal consolida dados do pedido, cliente, endereço e itens para emitir NF-e e disponibilizar XML, DANFE e baixas em lote",
           },
           {
-            problem: "Destacar-se em mercado competitivo de energia solar",
+            problem: "Proteger integrações e dados sensíveis",
             solution:
-              "Diferenciação através de design único, foco em benefícios específicos e apresentação clara do processo e expertise da empresa",
+              "JWT, throttling, tokens armazenados em hash, assinaturas de webhook e segredos por ambiente reforçam as principais superfícies da API",
           },
         ],
         results: [
           {
-            metric: "Taxa de Conversão",
-            value: "8.5%",
-            description: "Visitantes que solicitaram orçamento ou consultoria",
+            metric: "Arquitetura",
+            value: "API REST",
+            description: "Backend desacoplado para vitrine, checkout e administração",
           },
           {
-            metric: "Tempo na Página",
-            value: "4m 32s",
-            description: "Tempo médio de engajamento dos visitantes",
+            metric: "Operação",
+            value: "Ponta a ponta",
+            description: "Do catálogo à emissão fiscal e acompanhamento da entrega",
           },
           {
-            metric: "Performance Score",
-            value: "95/100",
-            description: "Pontuação no Google PageSpeed Insights",
+            metric: "Integrações",
+            value: "Automatizadas",
+            description: "Pagamentos, frete, armazenamento e emails transacionais",
           },
           {
-            metric: "Leads Qualificados",
-            value: "150+",
-            description: "Leads gerados nos primeiros 3 meses",
+            metric: "Deploy",
+            value: "Docker",
+            description: "Ambiente reproduzível com PostgreSQL e configuração externa",
           },
         ],
         liveUrl: "#",
@@ -1149,7 +1126,7 @@ Adaptar IA para estética exige compreender um mercado muito específico e sofis
                         alt={project.title}
                         width={800}
                         height={500}
-                        className={`w-full h-full object-cover object-center ${project.title === "Solax - Landing Page para Energia Solar" ? "" : "grayscale"} hover:grayscale-0 transition-all duration-300`}
+                        className={`w-full h-full object-cover object-center ${project.title === "Ecommerce TropDan Backend" ? "" : "grayscale"} hover:grayscale-0 transition-all duration-300`}
                         quality={70}
                         sizes="100vw"
                       />
@@ -1171,7 +1148,7 @@ Adaptar IA para estética exige compreender um mercado muito específico e sofis
                         alt={project.title}
                         width={600}
                         height={450}
-                        className={`w-full h-full object-cover object-center ${project.title === "Solax - Landing Page para Energia Solar" ? "" : "grayscale"} hover:grayscale-0 transition-all duration-300`}
+                        className={`w-full h-full object-cover object-center ${project.title === "Ecommerce TropDan Backend" ? "" : "grayscale"} hover:grayscale-0 transition-all duration-300`}
                         quality={70}
                         sizes="(max-width: 1200px) 50vw, 40vw"
                       />
