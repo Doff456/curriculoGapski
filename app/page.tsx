@@ -413,6 +413,90 @@ Além da API consumida pela vitrine e pelo painel administrativo, o projeto disp
         githubUrl: "#",
       },
       {
+        title: "LeadFinder - Prospecção Inteligente",
+        shortDescription:
+          "Aplicação full stack para encontrar comércios locais com baixa presença digital, priorizar oportunidades e acompanhar leads em um fluxo comercial simples e seguro.",
+        description:
+          "Ferramenta interna de prospecção que combina dados do Google Maps, filtros geográficos, classificação automática de oportunidades e um mini-CRM para transformar buscas locais em uma operação comercial organizada.",
+        detailedDescription: `## O que este projeto faz?
+
+O LeadFinder foi criado para apoiar a prospecção de empresas que podem se beneficiar de serviços digitais. A busca combina estado, cidade, bairro opcional e segmento de negócio, consulta estabelecimentos pelo Google Maps Scraper da Apify e normaliza os resultados antes de apresentá-los ao usuário.
+
+Cada empresa recebe uma pontuação baseada em sinais de oportunidade, como ausência de site, presença limitada a redes sociais e baixo volume de avaliações. Resultados sem telefone, empresas fechadas e leads já prospectados são removidos. Redes, franquias e nomes repetidos ficam ocultos por padrão, mas permanecem disponíveis para auditoria.
+
+O sistema inclui um mini-CRM com os estados prospectado, contatado, sem resposta e fechou negócio, além de exportação segura em CSV. Cidades brasileiras são carregadas pela API do IBGE e sugestões de bairros vêm do OpenStreetMap Overpass, tornando a pesquisa mais rápida e consistente.
+
+A integração com a Apify aceita múltiplas credenciais e distribui as execuções entre os tokens ativos com menor uso. Em caso de falha, outra credencial é testada automaticamente. Os tokens são validados, criptografados no banco e nunca retornam integralmente pela API.
+
+Para controlar custos e proteger a operação, buscas iguais utilizam cache por 24 horas, execuções simultâneas duplicadas são bloqueadas e cada chamada do scraper recebe um limite máximo de cobrança. Todas as rotas de dados exigem autenticação e contam com throttling, validação rigorosa de entrada e proteções específicas para links e arquivos CSV.`,
+        image: "/images/leadfinder-cover.png",
+        tech: ["Python 3.13", "Django 5.2", "Django REST Framework", "PostgreSQL", "React 19", "TypeScript", "Vite", "Apify", "IBGE API", "OpenStreetMap", "Railway", "Vercel"],
+        category: "Full Stack & Automação",
+        year: "2025",
+        duration: "Projeto completo",
+        team: "Individual",
+        features: [
+          "Busca por estado, cidade, bairro e tipo de negócio",
+          "Coleta de estabelecimentos com Google Maps Scraper da Apify",
+          "Pontuação automática do potencial comercial",
+          "Identificação de empresas sem site ou com presença digital limitada",
+          "Mini-CRM com acompanhamento do status de cada lead",
+          "Lista de bloqueio auditável para redes e franquias",
+          "Cache de buscas por 24 horas para evitar cobranças repetidas",
+          "Exportação de resultados em CSV com proteção contra fórmulas maliciosas",
+          "Múltiplos tokens da Apify com balanceamento e fallback automático",
+          "Credenciais criptografadas com suporte à rotação de chave",
+          "Cidades integradas à API do IBGE e bairros ao OpenStreetMap",
+          "Frontend e backend implantados separadamente na Vercel e Railway",
+        ],
+        challenges: [
+          {
+            problem: "Transformar dados brutos em oportunidades comerciais úteis",
+            solution:
+              "Uma camada de normalização filtra resultados inviáveis e aplica uma pontuação baseada em ausência de site, redes sociais e volume de avaliações",
+          },
+          {
+            problem: "Evitar custos duplicados nas consultas externas",
+            solution:
+              "Cache de 24 horas, bloqueio de buscas simultâneas idênticas e limites de cobrança reduzem execuções desnecessárias do scraper",
+          },
+          {
+            problem: "Manter a integração disponível com múltiplas credenciais",
+            solution:
+              "O backend seleciona o token ativo menos utilizado e realiza fallback automático quando uma credencial apresenta falha",
+          },
+          {
+            problem: "Armazenar tokens de terceiros com segurança",
+            solution:
+              "As credenciais são validadas, criptografadas no banco, mascaradas nas respostas e compatíveis com rotação de chaves",
+          },
+        ],
+        results: [
+          {
+            metric: "Prospecção",
+            value: "Priorizada",
+            description: "Oportunidades classificadas por sinais objetivos de presença digital",
+          },
+          {
+            metric: "Operação",
+            value: "Mini-CRM",
+            description: "Busca, seleção e acompanhamento reunidos em um único fluxo",
+          },
+          {
+            metric: "Eficiência",
+            value: "Cache 24h",
+            description: "Consultas repetidas reutilizam dados e preservam os créditos da Apify",
+          },
+          {
+            metric: "Segurança",
+            value: "Tokens cifrados",
+            description: "Credenciais protegidas, mascaradas e preparadas para rotação",
+          },
+        ],
+        liveUrl: "#",
+        githubUrl: "#",
+      },
+      {
         title: "Agente IA para Clínicas Médicas",
         shortDescription:
           "Sistema inteligente de atendimento automatizado via WhatsApp para clínicas, com agendamento, lembretes e respostas contextuais desenvolvido com N8N.",
@@ -1126,7 +1210,7 @@ Adaptar IA para estética exige compreender um mercado muito específico e sofis
                         alt={project.title}
                         width={800}
                         height={500}
-                        className={`w-full h-full object-cover object-center ${project.title === "Ecommerce TropDan Backend" ? "" : "grayscale"} hover:grayscale-0 transition-all duration-300`}
+                        className={`w-full h-full object-cover object-center ${["Ecommerce TropDan Backend", "LeadFinder - Prospecção Inteligente"].includes(project.title) ? "" : "grayscale"} hover:grayscale-0 transition-all duration-300`}
                         quality={70}
                         sizes="100vw"
                       />
@@ -1148,7 +1232,7 @@ Adaptar IA para estética exige compreender um mercado muito específico e sofis
                         alt={project.title}
                         width={600}
                         height={450}
-                        className={`w-full h-full object-cover object-center ${project.title === "Ecommerce TropDan Backend" ? "" : "grayscale"} hover:grayscale-0 transition-all duration-300`}
+                        className={`w-full h-full object-cover object-center ${["Ecommerce TropDan Backend", "LeadFinder - Prospecção Inteligente"].includes(project.title) ? "" : "grayscale"} hover:grayscale-0 transition-all duration-300`}
                         quality={70}
                         sizes="(max-width: 1200px) 50vw, 40vw"
                       />
