@@ -331,109 +331,55 @@ Com essa arquitetura integrada — Redis para estado rápido, PostgreSQL para pe
         ],
       },
       {
-        title: "Solax - Landing Page para Energia Solar",
+        title: "Ecommerce TropDan - Backend Django",
         shortDescription:
-          "Landing page moderna e responsiva desenvolvida para empresa de painéis solares, focada em conversão e experiência do usuário. Design profissional com gradientes, animações e seções otimizadas para geração de leads.",
+          "Backend Django completo para a loja virtual de uma indústria alimentícia especializada em doces e snacks derivados de banana. Centraliza catálogo, carrinho, checkout, pagamentos, frete e emissão fiscal em uma API REST.",
         description:
-          "Landing page completa desenvolvida para a Solax, empresa especializada em energia solar. O projeto combina design moderno com funcionalidades avançadas de conversão, apresentando os serviços da empresa de forma clara e atrativa.",
+          "Backend Django robusto desenvolvido para sustentar a operação real de um ecommerce de alimentos. O projeto concentra as regras de negócio da loja, integrações externas, administração de pedidos, pagamentos, frete, emissão fiscal e automações operacionais, expondo tudo através de endpoints REST consumidos por vitrine, checkout e painel administrativo.",
         detailedDescription: `## O que este projeto faz?
 
-Esta landing page profissional foi desenvolvida para a empresa Solax, com foco total em conversão de visitantes em leads qualificados. O site apresenta os benefícios da energia solar de forma clara, visual e persuasiva, guiando o usuário desde o primeiro contato até o envio de formulário para orçamento. Todo o design foi pensado para transmitir confiança, credibilidade e profissionalismo, fatores essenciais no mercado de energia solar, onde o ticket médio é alto e decisões exigem segurança.
+Este backend Django foi construído para sustentar a operação completa de uma loja virtual de uma indústria alimentícia especializada em doces e produtos derivados de banana. Ele concentra as regras de negócio do ecommerce, integrações externas, administração de pedidos, pagamentos, frete, emissão fiscal e automações operacionais, expondo tudo através de uma API REST consumida por vitrine, checkout, painel administrativo e agentes de atendimento.
 
-A interface foi construída com HTML5, CSS3 e JavaScript, utilizando princípios modernos de UI/UX para criar uma experiência fluida e atrativa. O design responsivo garante adaptação perfeita entre desktop e mobile, com imagens otimizadas, layouts flexíveis e navegação intuitiva em qualquer tamanho de tela. Animações suaves e gradientes dão ao site uma identidade visual moderna, reforçando a percepção de tecnologia e sustentabilidade.
+O módulo de autenticação cobre registro, login, logout, refresh token, recuperação e troca de senha, cadastro de CPF/CNPJ e gerenciamento de endereços, com recursos administrativos para consultar dados de usuários e apoiar clientes na troca de senha, sempre restritos a administradores. O catálogo gerencia produtos, categorias, banners, imagens, preços normais e promocionais, estoque, informações fiscais e avaliações, com imagens armazenadas em Cloudinary ou Cloudflare R2 conforme o ambiente.
 
-O site possui seções estratégicas: uma hero section otimizada para captura de leads, cards de benefícios interativos, explicação visual do processo em três etapas, portfólio real de projetos instalados, catálogo de serviços e múltiplos pontos de conversão. Cada elemento foi pensado para reduzir objeções e aumentar a confiança do usuário. Para melhorar ainda mais o desempenho, foram aplicadas técnicas de performance como minificação, lazy loading e boas práticas de estrutura semântica.
+O carrinho suporta itens de usuários autenticados e anônimos, aplicação de cupons e cálculo de subtotal, frete e total. O checkout transforma o carrinho em pedido e gera a preferência de pagamento no Mercado Pago Checkout Pro, com suporte a Pix, cartão e boleto. Webhooks do Mercado Pago atualizam automaticamente o status de pagamento, salvam metadados do meio de pagamento e controlam a expiração de pedidos pendentes, com prazos diferentes para boleto e demais formas de pagamento.
 
-A landing page também integra ferramentas de marketing e análise, permitindo acompanhar conversões e mapear o comportamento do usuário. Formulários são conectados com automações externas, e todo o conteúdo foi estruturado com foco em SEO, incluindo boas práticas de escrita, meta tags otimizadas e hierarquia adequada para melhor ranqueamento em buscas sobre energia solar.`,
-        image: "/images/solax-cover.png",
-        gallery: [
-          {
-            type: "desktop",
-            images: [
-              "/images/solax-energy.png",
-              "/images/solax-projects.png",
-              "/images/solax-process.png",
-              "/images/solax-benefits.png",
-              "/images/solax-services.png",
-              "/images/solax-hero.png",
-            ],
-          },
-          {
-            type: "mobile",
-            images: [
-              "/images/img-3930.jpeg",
-              "/images/img-3931.jpeg",
-              "/images/img-3932.jpeg",
-              "/images/img-3934.jpeg",
-              "/images/img-3935.jpeg",
-            ],
-          },
+O frete é calculado via integração com o Melhor Envio, incluindo cotação e geração de etiqueta, além de uma regra de frete grátis configurável por UF/região e valor mínimo de pedido, e a opção de retirada na loja com status próprio de acompanhamento. Um módulo fiscal cuida da configuração da empresa, certificado digital, preview e emissão de NF-e, download de XML/DANFE e baixa em lote por período, usando os dados do pedido, cliente, endereço e itens para montar a nota.
+
+Serviços de email transacional cobrem recuperação de senha, confirmação de pedido, pagamento aprovado, pedido pronto para retirada e entrega, enquanto a newsletter cadastra interessados em promoções e cupons. Endpoints dedicados permitem que agentes de IA — como chatbots ou atendimento via WhatsApp — consultem produtos, categorias, frete, opções de retirada e status de pedido, e criem checkouts, sempre protegidos por chave de agente.
+
+Rotinas automatizadas processam webhooks do Mercado Pago e do Melhor Envio, verificam rastreios periodicamente, cancelam pedidos pendentes expirados, dão baixa em estoque após confirmação de pagamento, desativam produtos sem estoque, disparam emails transacionais, notificam a newsletter sobre novos cupons ou promoções e migram imagens de Cloudinary para Cloudflare R2. A segurança é reforçada com autenticação JWT, throttling em endpoints sensíveis, tokens de reset de senha armazenados em hash, validação de assinatura dos webhooks, uploads restritos a formatos seguros e configurações sensíveis via variáveis de ambiente.`,
+        image: "/images/tropdan-cover.png",
+        tech: [
+          "Python 3.13",
+          "Django 5.2",
+          "Django REST Framework",
+          "Simple JWT",
+          "PostgreSQL",
+          "Mercado Pago",
+          "Melhor Envio API",
+          "Cloudinary",
+          "Cloudflare R2",
+          "Docker",
         ],
-        tech: ["HTML5", "CSS3", "JavaScript", "Responsive Design", "UI/UX Design"],
-        category: "Desenvolvimento Web",
+        category: "Engenharia de Software",
         year: "2025",
-        duration: "1 mês",
+        duration: "3 meses",
         team: "Individual",
         features: [
-          "Design responsivo com foco em conversão",
-          "Hero section com captura de leads otimizada",
-          "Seção de benefícios com cards interativos",
-          "Processo simplificado em 3 etapas visuais",
-          "Portfólio de projetos com casos reais",
-          "Seção de serviços com descrições detalhadas",
-          "Gradientes e animações suaves",
-          "Otimização para SEO e performance",
-          "Integração com ferramentas de marketing",
-          "Formulários de contato estratégicos",
-          "Design que transmite confiança e profissionalismo",
-          "Adaptação perfeita para mobile e desktop",
+          "Autenticação JWT com registro, login, refresh token e recuperação de senha",
+          "Catálogo completo de produtos, categorias, banners e imagens",
+          "Carrinho de compras com suporte a usuários autenticados e anônimos",
+          "Checkout integrado ao Mercado Pago com Pix, cartão e boleto",
+          "Cálculo de frete via Melhor Envio com geração de etiqueta",
+          "Frete grátis configurável por região e valor mínimo de pedido",
+          "Retirada na loja com status próprio de acompanhamento",
+          "Emissão, preview e download de NF-e (XML/DANFE)",
+          "Notificações por email em todo o ciclo do pedido",
+          "Newsletter com avisos de cupons e promoções",
+          "Endpoints dedicados para agentes de IA e atendimento via WhatsApp",
+          "Automações de estoque, expiração de pedidos e rastreio de entregas",
         ],
-        challenges: [
-          {
-            problem: "Educar sobre energia solar de forma simples e convincente",
-            solution:
-              "Criação de seções progressivas que explicam benefícios, processo e resultados usando linguagem acessível e elementos visuais claros",
-          },
-          {
-            problem: "Transmitir confiança para investimento de alto valor",
-            solution:
-              "Design profissional com casos reais, garantias claras, processo transparente e elementos visuais que remetem à qualidade e sustentabilidade",
-          },
-          {
-            problem: "Otimizar conversão sem comprometer a experiência",
-            solution:
-              "Posicionamento estratégico de CTAs, formulários não-intrusivos e múltiplos pontos de conversão adaptados ao comportamento do usuário",
-          },
-          {
-            problem: "Destacar-se em mercado competitivo de energia solar",
-            solution:
-              "Diferenciação através de design único, foco em benefícios específicos e apresentação clara do processo e expertise da empresa",
-          },
-        ],
-        results: [
-          {
-            metric: "Taxa de Conversão",
-            value: "8.5%",
-            description: "Visitantes que solicitaram orçamento ou consultoria",
-          },
-          {
-            metric: "Tempo na Página",
-            value: "4m 32s",
-            description: "Tempo médio de engajamento dos visitantes",
-          },
-          {
-            metric: "Performance Score",
-            value: "95/100",
-            description: "Pontuação no Google PageSpeed Insights",
-          },
-          {
-            metric: "Leads Qualificados",
-            value: "150+",
-            description: "Leads gerados nos primeiros 3 meses",
-          },
-        ],
-        liveUrl: "#",
-        githubUrl: "#",
       },
       {
         title: "Agente IA para Clínicas Médicas",
@@ -1149,7 +1095,7 @@ Adaptar IA para estética exige compreender um mercado muito específico e sofis
                         alt={project.title}
                         width={800}
                         height={500}
-                        className={`w-full h-full object-cover object-center ${project.title === "Solax - Landing Page para Energia Solar" ? "" : "grayscale"} hover:grayscale-0 transition-all duration-300`}
+                        className={`w-full h-full object-cover object-center ${project.title === "Ecommerce TropDan - Backend Django" ? "" : "grayscale"} hover:grayscale-0 transition-all duration-300`}
                         quality={70}
                         sizes="100vw"
                       />
@@ -1171,7 +1117,7 @@ Adaptar IA para estética exige compreender um mercado muito específico e sofis
                         alt={project.title}
                         width={600}
                         height={450}
-                        className={`w-full h-full object-cover object-center ${project.title === "Solax - Landing Page para Energia Solar" ? "" : "grayscale"} hover:grayscale-0 transition-all duration-300`}
+                        className={`w-full h-full object-cover object-center ${project.title === "Ecommerce TropDan - Backend Django" ? "" : "grayscale"} hover:grayscale-0 transition-all duration-300`}
                         quality={70}
                         sizes="(max-width: 1200px) 50vw, 40vw"
                       />
